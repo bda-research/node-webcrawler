@@ -1,41 +1,29 @@
-[![Build Status](https://travis-ci.org/sylvinus/node-crawler.svg?branch=master)](https://travis-ci.org/sylvinus/node-crawler)
-
-Node Crawler is not maintained at the moment (unless critical bug)
-------
-Have a look at alternatives modules:
-
-* [node-spider](https://github.com/mikeal/spider)
-* [node-simplecrawler](https://github.com/cgiffard/node-simplecrawler)
-* [phantomJS](http://phantomjs.org/)
-
-node-crawler
+node-webcrawler
 ------------
 
-node-crawler aims to be the best crawling/scraping package for Node.
+node-webcrawler is originally a fork of node-crawler(https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node.
 
 It features:
  * A clean, simple API
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
  * Configurable pool size and retries
  * Priority of requests
- * forceUTF8 mode to let node-crawler deal for you with charset detection and conversion
+ * forceUTF8 mode to let crawler deal for you with charset detection and conversion
  * A local cache
  * node 0.10 and 0.12 support
-
-The argument for creating this package was made at ParisJS #2 in 2010 ( [lightning talk slides](http://www.slideshare.net/sylvinus/web-crawling-with-nodejs) )
 
 Help & Forks welcomed!
 
 How to install
 --------------
 
-    $ npm install crawler
+    $ npm install node-webcrawler
 
 Crash course
 ------------
 
 ```javascript
-var Crawler = require("crawler");
+var Crawler = require("node-webcrawler");
 var url = require('url');
 
 var c = new Crawler({
@@ -81,7 +69,6 @@ c.queue([{
     html: '<p>This is a <strong>test</strong></p>'
 }]);
 ```
-For more examples, look at the [tests](https://github.com/sylvinus/node-crawler/tree/master/tests).
 
 Options reference
 -----------------
@@ -117,7 +104,6 @@ Retry options:
 Server-side DOM options:
 
  * `jQuery`: true, false or ConfObject (Default true)
-   see below [Working with Cheerio or JSDOM](https://github.com/paulvalla/node-crawler/blob/master/README.md#working-with-cheerio-or-jsdom)
 
 Charset encoding:
 
@@ -175,7 +161,7 @@ For a full list of options and their effects, see [this](https://github.com/fb55
 In order to work with JSDOM you will have to install it in your project folder `npm install jsdom`, deal with [compiling C++](https://github.com/tmpvar/jsdom#contextify) and pass it to crawler.
 ```javascript
 var jsdom = require('jsdom');
-var Crawler = require('crawler');
+var Crawler = require('node-webcrawler');
 
 var c = new Crawler({
     jQuery: jsdom
@@ -187,7 +173,7 @@ How to test
 
 ### Install and run Httpbin
 
-node-crawler use a local httpbin for testing purpose. You can install httpbin as a library from PyPI and run it as a WSGI app. For example, using Gunicorn:
+node-webcrawler use a local httpbin for testing purpose. You can install httpbin as a library from PyPI and run it as a WSGI app. For example, using Gunicorn:
 
     $ pip install httpbin
     // launch httpbin as a daemon with 6 worker on localhost
@@ -201,15 +187,16 @@ node-crawler use a local httpbin for testing purpose. You can install httpbin as
 After [installing Docker](http://docs.docker.com/), you can run:
 
     // Builds the local test environment
-    $ docker build -t node-crawler .
+    $ docker build -t node-webcrawler .
 
     // Runs tests
-    $ docker run node-crawler sh -c "gunicorn httpbin:app -b 127.0.0.1:8000 -w 6 --daemon && npm install && npm test"
+    $ docker run node-webcrawler sh -c "gunicorn httpbin:app -b 127.0.0.1:8000 -w 6 --daemon && npm install && npm test"
 
     // You can also ssh into the container for easier debugging
-    $ docker run -i -t node-crawler bash
+    $ docker run -i -t node-webcrawler bash
 
-[![build status](https://secure.travis-ci.org/sylvinus/node-crawler.png)](http://travis-ci.org/sylvinus/node-crawler)
+    
+[![build status](https://secure.travis-ci.org/mike442144/node-webcrawler.png)](https://travis-ci.org/mike442144/node-webcrawler)
 
 Rough todolist
 --------------
@@ -228,4 +215,4 @@ Rough todolist
 ChangeLog
 ---------
 
-See https://github.com/sylvinus/node-crawler/releases
+See https://github.com/mike442144/node-webcrawler/releases
