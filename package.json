@@ -1,7 +1,18 @@
 {
-  "name": "crawler",
-  "version": "0.4.3",
-  "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously. Scraping should be simple and fun!",
+  "name": "node-webcrawler",
+  "version": "0.4.4",
+  "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously",
+  "main": "./lib/crawler.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --bail --timeout 10000 tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike442144/node-webcrawler.git"
+  },
   "keywords": [
     "dom",
     "javascript",
@@ -12,58 +23,10 @@
     "jquery",
     "crawler"
   ],
-  "maintainers": [
-    {
-      "name": "Sylvain Zimmer",
-      "email": "sylvain@sylvainzimmer.com",
-      "url": "http://sylvinus.org/"
-    },
-    {
-      "name": "Paul Valla",
-      "email": "bonjour@pol.ninja",
-      "url": "http://www.pol.ninja/"
-    }
-  ],
+  "author": "Mike Chen",
+  "license": "ISC",
   "bugs": {
-    "url": "http://github.com/sylvinus/node-crawler/issues"
+    "url": "https://github.com/mike442144/node-webcrawler/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/sylvinus/node-crawler/blob/master/LICENSE.txt"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sylvinus/node-crawler.git"
-  },
-  "dependencies": {
-    "cheerio": "0.18.0",
-    "generic-pool": "2.1.1",
-    "iconv": "2.1.6",
-    "iconv-lite": "0.4.4",
-    "jschardet": "1.1.0",
-    "lodash": "2.4.1",
-    "request": "2.42.0"
-  },
-  "optionalDependencies": {
-    "iconv": "*"
-  },
-  "devDependencies": {
-    "chai": "1.9.2",
-    "mocha": "2.2.1",
-    "mocha-testdata": "1.1.0",
-    "sinon": "1.11.1",
-    "jsdom": "3.1.1"
-  },
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --reporter spec --bail --timeout 10000 tests/*.js"
-  },
-  "engines": [
-    "node >=0.8.x"
-  ],
-  "directories": {
-    "lib": "lib"
-  },
-  "main": "./lib/crawler"
+  "homepage": "https://github.com/mike442144/node-webcrawler"
 }
