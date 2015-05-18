@@ -1,7 +1,8 @@
+[![build status](https://secure.travis-ci.org/mike442144/node-webcrawler.png)](https://travis-ci.org/mike442144/node-webcrawler)
 node-webcrawler
 ------------
 
-node-webcrawler is originally a fork of node-crawler(https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node.
+node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node.
 
 It features:
  * A clean, simple API
