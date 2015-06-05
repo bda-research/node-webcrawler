@@ -83,7 +83,7 @@ the request() method.
 Basic request options:
 
  * `uri`: String, the URL you want to crawl
- * `timeout` : Number, in milliseconds        (Default 60000)
+ * `timeout` : Number, in milliseconds        (Default 15000)
  * [All mikeal's requests options are accepted](https://github.com/mikeal/request#requestoptions-callback)
 
 Callbacks:
@@ -216,4 +216,4 @@ Rough todolist
 ChangeLog
 ---------
 
-See https://github.com/mike442144/node-webcrawler/releases
+See https://github.com/bda-research/node-webcrawler/releases
