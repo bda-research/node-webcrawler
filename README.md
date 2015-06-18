@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/mike442144/node-webcrawler.png)](https://travis-ci.org/mike442144/node-webcrawler)
+[![build status](https://secure.travis-ci.org/bda-research/node-webcrawler.png)](https://travis-ci.org/bda-research/node-webcrawler)
 node-webcrawler
 ------------
 
@@ -197,7 +197,7 @@ After [installing Docker](http://docs.docker.com/), you can run:
     $ docker run -i -t node-webcrawler bash
 
     
-[![build status](https://secure.travis-ci.org/mike442144/node-webcrawler.png)](https://travis-ci.org/mike442144/node-webcrawler)
+[![build status](https://secure.travis-ci.org/bda-research/node-webcrawler.png)](https://travis-ci.org/bda-research/node-webcrawler)
 
 Rough todolist
 --------------
