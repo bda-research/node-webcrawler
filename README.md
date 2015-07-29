@@ -202,6 +202,8 @@ After [installing Docker](http://docs.docker.com/), you can run:
 Rough todolist
 --------------
 
+ * Using bottleneck to deal with rate limits
+ * Introducing zombie to deal with page with complex ajax
  * Refactoring the code to be more maintenable, it's spaghetti code in there !
  * Have a look at the Cache feature and refactor it
  * Same for the Pool
