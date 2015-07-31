@@ -14,6 +14,13 @@ It features:
 
 Help & Forks welcomed!
 
+0.5.0 version changelog:
+ * parse charset from `content-type` in http headers or meta tag in html, then conversion
+ * big5 charset is avaliable as the `iconv-lite` already support
+ * default enable gzip in request header
+ * remove unzip code in crawler since `request` will do this
+ * body will return as a Buffer if encoding is null which is an option in `request`
+
 How to install
 --------------
 
