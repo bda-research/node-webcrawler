@@ -4,22 +4,27 @@ node-webcrawler
 
 node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node.
 
-It features:
- * A clean, simple API
- * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
- * Configurable pool size and retries
- * Priority of requests
- * forceUTF8 mode to let crawler deal for you with charset detection and conversion
- * node 0.10 and 0.12 support
-
-Help & Forks welcomed!
-
 0.5.0 version changelog:
  * parse charset from `content-type` in http headers or meta tag in html, then convert
  * big5 charset is avaliable as the `iconv-lite` has already supported it 
  * default enable gzip in request header
  * remove unzip code in crawler since `request` will do this
  * body will return as a Buffer if encoding is null which is an option in `request`
+ * remove cache and skip duplicate `request` for `GET`, `POST`(only for type `urlencode`), `HEAD`
+ * add log feature, you can use `winston` to set `logger:winston`, or crawler will output to console
+ * rotate user-agent in case some sites ban your requests
+ 
+0.5.1 version changelog:
+ * remove cache feature, it's useless
+ * add `localAddress`, `time`, `tunnel`, `proxyHeaderWhiteList`, `proxyHeaderExclusiveList` properties to pass to `request`
+ 
+Features:
+ * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
+ * Configurable pool size and retries
+ * Priority of requests
+ * forceUTF8 mode to let crawler deal for you with charset detection and conversion
+
+Help & Forks welcomed!
 
 How to install
 --------------
@@ -114,18 +119,18 @@ Server-side DOM options:
 
 Charset encoding:
 
- * `forceUTF8`: Boolean, if true will try to detect the page charset and convert it to UTF8 if necessary. Never worry about encoding anymore! (Default false),
+ * `forceUTF8`: Boolean, if true will get charset from HTTP headers or meta tag in html and convert it to UTF8 if necessary. Never worry about encoding anymore! (Default false),
  * `incomingEncoding`: String, with forceUTF8: true to set encoding manually (Default null)
      `incomingEncoding : 'windows-1255'` for example
 
 Cache:
 
- * `cache`: Boolean, if true stores requests in memory (Default false)
+ * `cache`: Boolean, if true stores requests' result in memory (Default false), not recommend if you are doing with huge amount of pages as the process will exhaust momery
  * `skipDuplicates`: Boolean, if true skips URIs that were already crawled, without even calling callback() (Default false)
 
 Other:
-
- * `userAgent`: String, defaults to "node-crawler/[version]"
+ * `rotateUA`: Boolean, if true, `userAgent` should be an array, and rotate it (Default false) 
+ * `userAgent`: String or Array, if `rotateUA` is false, but `userAgent` is array, will use first one. defaults to "node-crawler/[version]"
  * `referer`: String, if truthy sets the HTTP referer header
  * `rateLimits`: Number of milliseconds to delay between each requests (Default 0) Note that this option will force crawler to use only one connection (for now)
 
