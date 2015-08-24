@@ -17,6 +17,10 @@ node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvin
 0.5.1 version changelog:
  * remove cache feature, it's useless
  * add `localAddress`, `time`, `tunnel`, `proxyHeaderWhiteList`, `proxyHeaderExclusiveList` properties to pass to `request`
+
+0.5.2 version changelog:
+ * terminate all the resources in your pool before their timeouts have been reached
+ * add a read-only property `queueSize` to crawler
  
 Features:
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
@@ -134,6 +138,19 @@ Other:
  * `referer`: String, if truthy sets the HTTP referer header
  * `rateLimits`: Number of milliseconds to delay between each requests (Default 0) Note that this option will force crawler to use only one connection (for now)
 
+ 
+Class:Crawler
+-------------
+
+Instance of Crawler
+
+_crawler.queue(uri|options)_
+ * `uri` String, `options` is [Options](#options-reference)
+
+_crawler.queueSize_
+Size of queue, read-only
+
+ 
 Working with Cheerio or JSDOM
 -----------------------------
 
