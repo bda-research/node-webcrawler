@@ -144,10 +144,11 @@ Class:Crawler
 
 Instance of Crawler
 
-_crawler.queue(uri|options)_
+__crawler.queue(uri|options)__
  * `uri` String, `options` is [Options](#options-reference)
 
-_crawler.queueSize_
+__crawler.queueSize__
+
 Size of queue, read-only
 
  
