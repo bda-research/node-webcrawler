@@ -19,8 +19,16 @@ node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvin
  * add `localAddress`, `time`, `tunnel`, `proxyHeaderWhiteList`, `proxyHeaderExclusiveList` properties to pass to `request`
 
 0.5.2 version changelog:
- * terminate all the resources in your pool before their timeouts have been reached
+ * you can manually terminate all the resources in your pool before their timeouts have been reached
  * add a read-only property `queueSize` to crawler
+ 
+0.6.0 version changelog:
+ * add `bottleneck` to implement rate limit, one can set limit for each connection at same time.
+ 
+0.6.3 version changelog:
+ * you could also get `result.options` from callback even when some errors ouccurred
+ * add test for `bottleneck`
+
  
 Features:
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
@@ -104,7 +112,7 @@ Basic request options:
 Callbacks:
 
  * `callback(error, result, $)`: A request was completed
- * `onDrain()`: There is no more queued requests
+ * `onDrain(pool)`: There is no more queued requests, call `pool.destroyAllNow()` if you wanna release resources in pool to, or if you have follow-up tasks to queue you can ignore.
 
 Pool options:
 
@@ -136,7 +144,7 @@ Other:
  * `rotateUA`: Boolean, if true, `userAgent` should be an array, and rotate it (Default false) 
  * `userAgent`: String or Array, if `rotateUA` is false, but `userAgent` is array, will use first one. defaults to "node-crawler/[version]"
  * `referer`: String, if truthy sets the HTTP referer header
- * `rateLimits`: Number of milliseconds to delay between each requests (Default 0) Note that this option will force crawler to use only one connection (for now)
+ * `rateLimits`: Number of milliseconds to delay between each requests (Default 0) 
 
  
 Class:Crawler

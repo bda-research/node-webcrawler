@@ -1,6 +1,6 @@
 {
   "name": "node-webcrawler",
-  "version": "0.5.2",
+  "version": "0.6.3",
   "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously",
   "main": "./lib/crawler.js",
   "directories": {
@@ -21,7 +21,8 @@
     "iconv-lite": "0.4.8",
     "lodash": "3.8.0",
     "request": "2.55.0",
-    "seenreq": "0.0.5"
+    "seenreq": "0.0.5",
+      "bottleneck":"1.9.1"
   },
   "optionalDependencies": {
     "iconv": "*"
