@@ -19,7 +19,7 @@ node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvin
  * add `localAddress`, `time`, `tunnel`, `proxyHeaderWhiteList`, `proxyHeaderExclusiveList` properties to pass to `request`
 
 0.5.2 version changelog:
- * you can manually terminate all the resources in your pool before their timeouts have been reached
+ * you can manually terminate all the resources in your pool, when `onDrain` called, before their timeouts have been reached
  * add a read-only property `queueSize` to crawler
  
 0.6.0 version changelog:
