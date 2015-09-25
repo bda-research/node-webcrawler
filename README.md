@@ -2,40 +2,16 @@
 node-webcrawler
 ------------
 
-node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node.
+node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node, sice the author won't mantain I will take care of it.
 
-0.5.0 version changelog:
- * parse charset from `content-type` in http headers or meta tag in html, then convert
- * big5 charset is avaliable as the `iconv-lite` has already supported it 
- * default enable gzip in request header
- * remove unzip code in crawler since `request` will do this
- * body will return as a Buffer if encoding is null which is an option in `request`
- * remove cache and skip duplicate `request` for `GET`, `POST`(only for type `urlencode`), `HEAD`
- * add log feature, you can use `winston` to set `logger:winston`, or crawler will output to console
- * rotate user-agent in case some sites ban your requests
- 
-0.5.1 version changelog:
- * remove cache feature, it's useless
- * add `localAddress`, `time`, `tunnel`, `proxyHeaderWhiteList`, `proxyHeaderExclusiveList` properties to pass to `request`
-
-0.5.2 version changelog:
- * you can manually terminate all the resources in your pool, when `onDrain` called, before their timeouts have been reached
- * add a read-only property `queueSize` to crawler
- 
-0.6.0 version changelog:
- * add `bottleneck` to implement rate limit, one can set limit for each connection at same time.
- 
-0.6.3 version changelog:
- * you could also get `result.options` from callback even when some errors ouccurred
- * add test for `bottleneck`
-
- 
 Features:
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
  * Configurable pool size and retries
  * Priority of requests
  * forceUTF8 mode to let crawler deal for you with charset detection and conversion
 
+Here is the [CHANGELOG](https://github.com/bda-research/node-webcrawler/blob/master/CHANGELOG.md)
+ 
 Help & Forks welcomed!
 
 How to install
