@@ -70,6 +70,45 @@ c.queue([{
 }]);
 ```
 
+Work with `bottleneck`
+--------------------
+
+```javascript
+var Crawler = require("node-webcrawler");
+
+// control rate limits for each connection, usually used with proxies
+var c = new Crawler({
+    maxConnections : 3,
+    rateLimits:2000,
+    callback : function (error, result, $) {
+        if(error){
+	    console.error(error);
+	}else{
+	    console.log($('title').text());
+	}
+    }
+});
+
+c.queue({
+    uri:"http://www.google.com",
+    limiter:"key1",// for connection of 'key1'
+    proxy:"http://user:pass@127.0.0.1:8080"
+});
+
+c.queue({
+    uri:"http://www.google.com",
+    limiter:"key2", // for connection of 'key2'
+    proxy:"http://user:pass@127.0.0.1:8082"
+});
+
+c.queue({
+    uri:"http://www.google.com",
+    limiter:"key3", // for connection of 'key3'
+    proxy:"http://user:pass@127.0.0.1:8081"
+});
+
+```
+
 Options reference
 -----------------
 
@@ -118,7 +157,7 @@ Cache:
 
 Other:
  * `rotateUA`: Boolean, if true, `userAgent` should be an array, and rotate it (Default false) 
- * `userAgent`: String or Array, if `rotateUA` is false, but `userAgent` is array, will use first one. defaults to "node-crawler/[version]"
+ * `userAgent`: String or Array, if `rotateUA` is false, but `userAgent` is array, will use first one. 
  * `referer`: String, if truthy sets the HTTP referer header
  * `rateLimits`: Number of milliseconds to delay between each requests (Default 0) 
 
