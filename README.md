@@ -72,11 +72,11 @@ c.queue([{
 
 Work with `bottleneck`
 --------------------
+Control rate limits for each connection, usually used with proxy.
 
 ```javascript
 var Crawler = require("node-webcrawler");
 
-// control rate limits for each connection, usually used with proxies
 var c = new Crawler({
     maxConnections : 3,
     rateLimits:2000,
