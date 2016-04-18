@@ -21,7 +21,7 @@
     "iconv-lite": "0.4.8",
     "lodash": "3.8.0",
     "request": "2.67.0",
-    "seenreq": "0.1.6",
+    "seenreq": "^0.1.7",
       "bottleneck":"1.9.1"
   },
   "optionalDependencies": {
