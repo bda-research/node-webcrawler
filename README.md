@@ -32,18 +32,15 @@ var c = new Crawler({
     callback : function (error, result, $) {
         // $ is Cheerio by default
         //a lean implementation of core jQuery designed specifically for the server
-        $('a').each(function(index, a) {
-            var toQueueUrl = $(a).attr('href');
-            c.queue(toQueueUrl);
-        });
+		console.log($("title").text())
     }
 });
 
 // Queue just one URL, with default callback
-c.queue('http://joshfire.com');
+c.queue('http://www.amazon.com');
 
 // Queue a list of URLs
-c.queue(['http://jamendo.com/','http://tedxparis.com']);
+c.queue(['http://www.google.com/','http://www.yahoo.com']);
 
 // Queue URLs with custom callbacks & parameters
 c.queue([{
@@ -55,14 +52,6 @@ c.queue([{
         console.log('Grabbed', result.body.length, 'bytes');
     }
 }]);
-
-// Queue using a function
-var googleSearch = function(search) {
-  return 'http://www.google.fr/search?q=' + search;
-};
-c.queue({
-  uri: googleSearch('cheese')
-});
 
 // Queue some HTML code directly without grabbing (mostly for tests)
 c.queue([{
