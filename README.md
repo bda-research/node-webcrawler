@@ -32,7 +32,11 @@ var c = new Crawler({
     callback : function (error, result, $) {
         // $ is Cheerio by default
         //a lean implementation of core jQuery designed specifically for the server
-		console.log($("title").text())
+		if(error){
+			console.log(error);
+		}else{
+			console.log($("title").text());
+		}
     }
 });
 
@@ -49,7 +53,11 @@ c.queue([{
 
     // The global callback won't be called
     callback: function (error, result) {
-        console.log('Grabbed', result.body.length, 'bytes');
+		if(error){
+			console.log(error);
+		}else{
+			console.log('Grabbed', result.body.length, 'bytes');
+		}
     }
 }]);
 
@@ -70,11 +78,11 @@ var c = new Crawler({
     maxConnections : 3,
     rateLimits:2000,
     callback : function (error, result, $) {
-        if(error){
-	    console.error(error);
-	}else{
-	    console.log($('title').text());
-	}
+		if(error){
+			console.error(error);
+		}else{
+			console.log($('title').text());
+		}
     }
 });
 
