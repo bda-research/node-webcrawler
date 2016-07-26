@@ -29,3 +29,21 @@ node-webcrawler ChangeLog
 0.6.5
  * fix a deep and big bug when initializing Pool, that may lead to sequence execution. [issue](https://github.com/bda-research/node-webcrawler/issues/2)
  * print log of Pool status
+
+0.6.9
+ * use `bottleneckConcurrent` instead of `maxConnections`, default `10000`
+ * add debug info
+
+0.7.0
+ * cancel recursion in queue
+ * upgrade `request` version to v2.67.0
+
+0.7.4
+ * change `debug` option to instance level instead of `options`
+ * update README.md to detail error handling
+ * call `onDrain` with scope of `this`
+ * upgrade `seenreq` version to 0.1.7
+
+0.7.5
+ * delete entity in options before copy, and assgin after, `jar` is one of the typical properties which is an `Entity` wich functions
+ * upgrade `request` to version 2.74.0
