@@ -2,7 +2,7 @@
 node-webcrawler
 ------------
 
-node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node, sice the author won't mantain I will take care of it.
+node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node, since the author won't mantain I will take care of it.
 
 Features:
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
