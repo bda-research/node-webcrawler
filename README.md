@@ -1,8 +1,6 @@
 [![build status](https://secure.travis-ci.org/bda-research/node-webcrawler.png)](https://travis-ci.org/bda-research/node-webcrawler)
-node-webcrawler
+node-webcrawler. The original [node-crawler](https://github.com/sylvinus/node-crawler) is going to be transfered to us, detail: https://github.com/sylvinus/node-crawler/issues/168#issuecomment-237381273
 ------------
-
-node-webcrawler is originally a fork of [node-crawler](https://github.com/sylvinus/node-crawler) which aims to be the best crawling/scraping package for Node, since the author won't mantain I will take care of it.
 
 Features:
  * server-side DOM & automatic jQuery insertion with Cheerio (default) or JSDOM
