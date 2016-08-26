@@ -1,5 +1,5 @@
 [![build status](https://secure.travis-ci.org/bda-research/node-webcrawler.png)](https://travis-ci.org/bda-research/node-webcrawler)
-node-webcrawler. The original [node-crawler](https://github.com/sylvinus/node-crawler) is going to be transfered to us, detail: https://github.com/sylvinus/node-crawler/issues/168#issuecomment-237381273
+The original [node-crawler](https://github.com/sylvinus/node-crawler) has been transfered to us, this repo is going to merge with it.
 ------------
 
 Features:
